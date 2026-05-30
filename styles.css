@@ -110,6 +110,22 @@ h3 {
   font-size: 20px;
 }
 
+.hero-kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.hero-kpis span {
+  padding: 8px 12px;
+  color: var(--green-dark);
+  background: var(--white);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -196,7 +212,8 @@ h3 {
 }
 
 .intro,
-.plans {
+.plans,
+.career {
   background: var(--white);
 }
 
@@ -227,6 +244,48 @@ h3 {
 .text-block,
 .note {
   color: var(--muted);
+}
+
+.career-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+  gap: 28px;
+}
+
+.career-timeline,
+.skill-matrix {
+  display: grid;
+  gap: 16px;
+}
+
+.career-timeline div,
+.skill-matrix div {
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.career-timeline span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.career-timeline p,
+.skill-matrix span {
+  color: var(--muted);
+}
+
+.skill-matrix strong,
+.skill-matrix span {
+  display: block;
+}
+
+.skill-matrix strong {
+  margin-bottom: 8px;
+  color: var(--green-dark);
 }
 
 .problem {
@@ -319,6 +378,93 @@ h3 {
   color: var(--white);
 }
 
+.ltv-model,
+.simulation,
+.line-reason,
+.kpi-table {
+  margin-top: 34px;
+  padding: 34px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.ltv-model {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: clamp(28px, 5vw, 64px);
+}
+
+.ltv-model p,
+.simulation p,
+.line-reason span,
+.kpi-rows span {
+  color: var(--muted);
+}
+
+.formula-box,
+.simulation-grid,
+.reason-table,
+.kpi-rows {
+  display: grid;
+  gap: 12px;
+}
+
+.formula-box p,
+.kpi-rows p {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 18px;
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.formula-box p:last-child,
+.kpi-rows p:last-child {
+  border-bottom: 0;
+}
+
+.formula-box strong,
+.kpi-rows strong,
+.reason-table strong {
+  color: var(--green-dark);
+}
+
+.formula-box span,
+.kpi-rows span,
+.reason-table span {
+  display: block;
+}
+
+.simulation-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.simulation-grid div,
+.reason-table div {
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.simulation-grid span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.simulation-grid strong {
+  color: var(--green-dark);
+  font-size: 25px;
+}
+
+.reason-table {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .data-logic .label {
   color: var(--accent);
 }
@@ -376,27 +522,10 @@ h3 {
 }
 
 .interview-card {
-  display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 24px;
+  display: block;
   padding: 28px;
   background: var(--white);
   border: 1px solid var(--line);
-}
-
-.portrait-placeholder {
-  display: grid;
-  width: 150px;
-  height: 150px;
-  place-items: center;
-  color: var(--muted);
-  background:
-    linear-gradient(180deg, rgba(36, 95, 69, 0.12), rgba(215, 181, 109, 0.18)),
-    var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  font-size: 13px;
-  font-weight: 800;
 }
 
 .interview-card h3 {
@@ -630,10 +759,14 @@ footer p {
   .hero,
   .two-column,
   .profile-grid,
+  .career-layout,
   .case-grid,
   .interview-grid,
   .evidence-grid,
   .data-logic,
+  .ltv-model,
+  .simulation-grid,
+  .reason-table,
   .reason-grid,
   .flow-list,
   .plan-grid,
@@ -668,7 +801,8 @@ footer p {
   }
 
   .data-points p,
-  .interview-card {
+  .formula-box p,
+  .kpi-rows p {
     grid-template-columns: 1fr;
   }
 }
