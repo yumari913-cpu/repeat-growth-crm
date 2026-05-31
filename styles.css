@@ -59,13 +59,14 @@ nav {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) 420px;
-  gap: clamp(32px, 6vw, 80px);
-  align-items: end;
+  display: block;
   padding: 96px clamp(20px, 6vw, 88px) 76px;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
+}
+
+.hero-main {
+  max-width: 980px;
 }
 
 .label {
@@ -154,45 +155,6 @@ h3 {
   background: transparent;
 }
 
-.hero-panel {
-  padding: 28px;
-  background: var(--white);
-  border: 1px solid var(--line);
-}
-
-.panel-title {
-  margin-bottom: 20px;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.panel-row {
-  display: grid;
-  gap: 4px;
-  padding: 18px 0;
-  border-top: 1px solid var(--line);
-}
-
-.panel-row span {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.panel-row strong {
-  color: var(--green-dark);
-  font-size: 24px;
-  line-height: 1.35;
-}
-
-.panel-note {
-  margin-top: 20px;
-  padding: 16px;
-  color: var(--muted);
-  background: var(--soft);
-  font-size: 14px;
-}
-
 .section {
   padding: 84px clamp(20px, 6vw, 88px);
 }
@@ -211,7 +173,6 @@ h3 {
   font-size: 18px;
 }
 
-.intro,
 .plans,
 .career {
   background: var(--white);
@@ -247,9 +208,7 @@ h3 {
 }
 
 .career-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
-  gap: 28px;
+  display: block;
 }
 
 .career-timeline,
@@ -258,11 +217,29 @@ h3 {
   gap: 16px;
 }
 
+.career-timeline {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .career-timeline div,
-.skill-matrix div {
+.skill-matrix article {
   padding: 24px;
   background: var(--paper);
   border: 1px solid var(--line);
+}
+
+.capability-block {
+  margin-top: 34px;
+}
+
+.skill-matrix {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.skill-matrix article {
+  display: grid;
+  gap: 10px;
+  align-items: start;
 }
 
 .career-timeline span {
@@ -284,7 +261,7 @@ h3 {
 }
 
 .skill-matrix strong {
-  margin-bottom: 8px;
+  margin-bottom: 0;
   color: var(--green-dark);
 }
 
@@ -507,7 +484,8 @@ h3 {
   text-underline-offset: 3px;
 }
 
-.case-slider-section {
+.case-slider-section,
+.client-logos {
   background: var(--white);
 }
 
@@ -534,6 +512,25 @@ h3 {
 
 .interview-card p:not(.case-type) {
   color: var(--muted);
+}
+
+.interview-card.is-coming-soon {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  background: repeating-linear-gradient(
+      -45deg,
+      rgba(36, 95, 69, 0.06),
+      rgba(36, 95, 69, 0.06) 10px,
+      rgba(255, 255, 255, 0.72) 10px,
+      rgba(255, 255, 255, 0.72) 22px
+    ),
+    var(--white);
+}
+
+.interview-card.is-coming-soon h3 {
+  color: var(--green-dark);
+  font-size: clamp(30px, 4vw, 46px);
 }
 
 .case-type {
@@ -581,6 +578,32 @@ ul {
 .logo-card.muted {
   color: #8a8f87;
   font-size: 18px;
+}
+
+.client-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.client-logo-card {
+  display: grid;
+  min-height: 116px;
+  place-items: center;
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.client-logo-card img {
+  display: block;
+  max-width: 100%;
+  max-height: 58px;
+  object-fit: contain;
+}
+
+.client-logo-card.osakana-logo {
+  background: var(--green-dark);
 }
 
 .case-slider {
@@ -759,7 +782,7 @@ footer p {
   .hero,
   .two-column,
   .profile-grid,
-  .career-layout,
+  .career-timeline,
   .case-grid,
   .interview-grid,
   .evidence-grid,
@@ -771,9 +794,15 @@ footer p {
   .flow-list,
   .plan-grid,
   .logo-strip,
+  .client-logo-grid,
   .case-slide dl,
   .cta {
     grid-template-columns: 1fr;
+  }
+
+  .skill-matrix article {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .hero {
