@@ -10,6 +10,45 @@
     />
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./script.js"></script>
+    <style>
+      .plan-grid article {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .plan-lead {
+        margin-bottom: 22px;
+        font-weight: 700;
+      }
+
+      .plan-details {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .plan-details div {
+        display: grid;
+        gap: 6px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .plan-details dt {
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+      }
+
+      .plan-details dd {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -369,24 +408,44 @@
         <div class="section-heading narrow">
           <p class="label">Plans</p>
           <h2>相談プラン</h2>
+          <p>まずは現状把握だけでも、月次運用の代行でも、LTV改善を横断して任せる形でも開始できます。</p>
         </div>
         <div class="plan-grid">
           <article>
             <h3>CRM診断</h3>
-            <p class="price">10万万円</p>
-            <p>現状分析、課題整理、改善施策、優先順位付きアクションプラン。</p>
+            <p class="price">10万円〜</p>
+            <p class="plan-lead">まずは改善余地と優先順位を知りたい企業向け。</p>
+            <dl class="plan-details">
+              <div><dt>対象</dt><dd>LINE・メール・モール施策を始めているが、何から直すべきか整理したい</dd></div>
+              <div><dt>内容</dt><dd>売上構成、購入回数、購入間隔、休眠顧客、配信状況、導線を確認</dd></div>
+              <div><dt>成果物</dt><dd>課題整理、改善施策、優先順位付きアクションプラン</dd></div>
+              <div><dt>目安</dt><dd>初回ヒアリング後、1〜2週間で診断レポートを提出</dd></div>
+            </dl>
           </article>
           <article>
             <h3>LINE・メルマガ運用</h3>
             <p class="price">月額20万〜40万円</p>
-            <p>配信設計、原稿作成、運用、月次レポート、改善提案。</p>
+            <p class="plan-lead">配信設計から原稿作成、月次改善まで任せたい企業向け。</p>
+            <dl class="plan-details">
+              <div><dt>対象</dt><dd>LINEやメールを運用しているが、配信がキャンペーン告知中心になっている</dd></div>
+              <div><dt>内容</dt><dd>月次配信計画、セグメント配信、購入後フォロー、休眠復帰施策を設計</dd></div>
+              <div><dt>成果物</dt><dd>配信カレンダー、LINE・メール原稿、簡易レポート、翌月改善案</dd></div>
+              <div><dt>頻度</dt><dd>月次定例、月2〜4本程度の配信設計から相談可能</dd></div>
+            </dl>
           </article>
           <article>
             <h3>LTV改善伴走</h3>
             <p class="price">月額50万〜100万円</p>
-            <p>CRM戦略、LINE、メール、モール、顧客データ分析を横断支援。</p>
+            <p class="plan-lead">CRMを売上・粗利改善の仕組みとして作り直したい企業向け。</p>
+            <dl class="plan-details">
+              <div><dt>対象</dt><dd>LINE、メール、Amazon・楽天・Qoo10、購買データを横断して改善したい</dd></div>
+              <div><dt>内容</dt><dd>CRM戦略、KPI設計、施策実行、モール後追い、顧客データ分析を伴走</dd></div>
+              <div><dt>成果物</dt><dd>90日ロードマップ、月次レポート、施策改善案、配信・導線の実行支援</dd></div>
+              <div><dt>会議</dt><dd>月次定例に加え、必要に応じて施策前後の確認会を実施</dd></div>
+            </dl>
           </article>
         </div>
+        <p class="note">料金は商材数、配信本数、対象モール、分析範囲、実装範囲により変動します。初回相談で必要な範囲を切り分けます。</p>
       </section>
 
       <section class="cta" id="contact">
