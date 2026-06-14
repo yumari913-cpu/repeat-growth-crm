@@ -1,4 +1,4 @@
-# リピートグロース CRM - GitHub Pages公開用
+# ECリピート売上ラボ - GitHub Pages公開用
 
 このフォルダ内のファイルをGitHubリポジトリにアップロードすると、GitHub Pagesで静的LPとして公開できます。
 
